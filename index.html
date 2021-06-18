@@ -8,28 +8,33 @@
 </head>
 <body>
     <script>
-        class Rectangle {
-            constructor(_width, _height, _color) {
-                console.log("El rectangulo ha sido creado");
-
+        class Square {
+            constructor(_width) {
                 this.width = _width;
-                this.height = _height;
-                this.color = _color;
+                this.height = _width;
+                this.numOfRequestsForArea = 0;
             }
 
-            getArea() {
+            get area() {
+                this.numOfRequestsForArea++;
                 return this.width * this.height;
             }
 
-            printDescription() {
-                console.log(`Soy un rectangulo de ${this.width} x ${this.height} y soy de color ${this.color}`)
+            set area(area) {
+                this.width = Math.sqrt(area);
+                this.height = this.width;
             }
         }
 
-        let miRectangulo1 = new Rectangle(5, 3, "blue");
-        let miRectangulo2 = new Rectangle(10, 5, "red");
+        let square1 = new Square(4);
+        square1.area = 25;
 
-        miRectangulo2.printDescription();
+        console.log(square1.area);
+        console.log(square1.area);
+        console.log(square1.area);
+        console.log(square1.area);
+
+        console.log(square1.numOfRequestsForArea);
     </script>
 </body>
 </html>
