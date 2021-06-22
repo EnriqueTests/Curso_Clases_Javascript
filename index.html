@@ -4,36 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Classes: HTML List Binding</title>
 </head>
 <body>
-    <script>
-        class Animal {
-            constructor(name) {
-                this.name = name;
-            }
+    <h2 id="title">Classes: HTML List Binding</h2>
+    <ul id="myList">
+        <!--To be filled with JavaScript-->
+    </ul>
 
-            makeSound() {
-                console.log("Generic Animal Sound!!");
-            }
-        }
-
-        class Dog extends Animal {
-            constructor(name) {
-                super(name);
-            }
-
-            makeSound() {
-                super.makeSound();
-                console.log("Woof! Woof!");
-            }
-        }
-
-        const a1 = new Animal("Dom");
-        const a2 = new Dog("Jeff");
-
-        a1.makeSound();
-        a2.makeSound();
+    <script src="ListBinding.js"></script>
+    <script type="text/javascript">
+        const myList = document.getElementById("myList");
+        const listBinding = new ListBinding(myList);
     </script>
 </body>
 </html>
